@@ -29,9 +29,13 @@ This will compile the index.html and all assets into the `\build` folder.
 ## To Do
 
 - Add comments to Webpack config files
-- Add comments about how images are being loaded.
-- Add comments about how template variables are being handled.
-    - E.g. Need to restart dev-server if `/config/globals.js` has been updated.
+- Add comments about how images are being loaded
+    - Small images are simply output as base64
+    - Image example: `<img src="<%= require('./img/test.jpg') %>">`
+    - CSS background images just use relative path
+    
+- Add comments about how template variables are being handled
+    - E.g. Need to restart dev-server if `/config/globals.js` has been updated
 
 ## Author
 

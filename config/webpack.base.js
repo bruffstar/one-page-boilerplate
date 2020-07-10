@@ -1,5 +1,4 @@
 const paths = require('./paths');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: paths.src + '/resources/js/index.ts',
@@ -43,16 +42,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-    },
-    plugins: [
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: './src/resources/img',
-                    to: 'images/[name].[hash].[ext]',
-                    toType: 'template'
-                },
-            ],
-        }),
-    ]
+    }
 };

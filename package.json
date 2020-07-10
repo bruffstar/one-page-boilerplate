@@ -1,0 +1,41 @@
+{
+    "name": "one-page-boilerplate",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "webpack-dev-server --open --config=config/webpack.dev.js",
+        "build": "webpack --config=config/webpack.prod.js"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/preset-env": "^7.10.4",
+        "babel-loader": "^8.1.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "core-js": "^3.6.5",
+        "css-loader": "^3.6.0",
+        "file-loader": "^6.0.0",
+        "html-webpack-plugin": "^4.3.0",
+        "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^4.14.1",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "postcss-flexbugs-fixes": "^4.2.1",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "postcss-safe-parser": "^4.0.2",
+        "resolve-url-loader": "^3.1.1",
+        "sass-loader": "^9.0.2",
+        "style-loader": "^1.2.1",
+        "ts-loader": "^8.0.0",
+        "typescript": "^3.9.6",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "url-loader": "^4.1.0",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0",
+        "webpack-merge": "^5.0.9"
+    }
+}

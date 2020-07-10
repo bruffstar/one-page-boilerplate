@@ -1,0 +1,92 @@
+$background: #b2dcec;
+$fontColor: darken($background, 35%);
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+svg {
+    overflow: hidden;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 50px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+    flex-direction: column;
+    color: $fontColor;
+    text-align: center;
+}
+
+#webpack-icon {
+    margin-bottom: 20px;
+    opacity: 0.4;
+    animation: spin 30s linear infinite;
+    will-change: transform;
+}
+
+#content {
+    padding: 20px;
+    margin: auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    font-size: 0.9rem;
+
+    #github {
+        display: inline-block;
+        margin-top: 30px;
+        width: 40px;
+        height: 40px;
+
+        & svg {
+            fill: darken($background, 10%);
+
+            &:hover {
+                fill: darken($background, 50%);
+            }
+        }
+    }
+}
+
+p {
+    line-height: 1.8;
+}
+
+a {
+    color: $fontColor;
+
+    &:visited,
+    &:link {
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

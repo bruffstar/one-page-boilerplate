@@ -7,6 +7,7 @@ const safePostCssParser = require('postcss-safe-parser');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const base = require('./webpack.base');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const globals = require('./globals.js');
 
 module.exports = merge(base, {
     mode: 'production',
@@ -77,6 +78,7 @@ module.exports = merge(base, {
         new HtmlWebpackPlugin({
             template: paths.src + '/index.html',
             filename: 'index.html',
+            templateParameters: globals,
             minify: {
                 collapseWhitespace: true,
                 removeComments: true,

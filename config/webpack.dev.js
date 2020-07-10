@@ -2,6 +2,7 @@ const paths = require('./paths');
 const {merge} = require('webpack-merge');
 const base = require('./webpack.base');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const globals = require('./globals.js');
 
 module.exports = merge(base, {
     mode: 'development',
@@ -73,6 +74,7 @@ module.exports = merge(base, {
         new HtmlWebpackPlugin({
             template: paths.src + '/index.html',
             filename: 'index.html',
+            templateParameters: globals
         }),
     ],
 });

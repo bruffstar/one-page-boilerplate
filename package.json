@@ -1,6 +1,6 @@
 {
     "name": "one-page-boilerplate",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "scripts": {
         "start": "webpack-dev-server --open --config=config/webpack.dev.js",
         "build": "webpack --config=config/webpack.prod.js"

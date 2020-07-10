@@ -1,4 +1,5 @@
 const paths = require('./paths');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: paths.src + '/resources/js/index.ts',
@@ -25,14 +26,15 @@ module.exports = {
                 },
             },
             {
-                test: /\.(png|jpe?g|gif|svg|bmp|webp)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             name: '[name].[contenthash:8].[ext]',
                             limit: 4096,
-                            outputPath: 'assets',
+                            outputPath: 'images',
+                            esModule: false,
                         },
                     },
                 ],
@@ -40,6 +42,17 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ],
+        extensions: ['.tsx', '.ts', '.js'],
     },
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './src/resources/img',
+                    to: 'images/[name].[hash].[ext]',
+                    toType: 'template'
+                },
+            ],
+        }),
+    ]
 };
